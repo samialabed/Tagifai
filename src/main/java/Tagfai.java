@@ -20,7 +20,7 @@ public class Tagfai {
 		clarifai = new ClarifaiClient(); // initialise clarifai client using environment variables
 
 		if (args.length < 1) {
-			System.err.println("Usage: java -jar inputDirectory [-D]");
+			System.err.println("Usage: java -jar Tagifai-1-jar-with-dependencies.jar inputDirectory [-D]");
 			return;
 		}
 

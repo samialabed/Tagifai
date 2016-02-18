@@ -44,7 +44,7 @@ public class Tagfai {
 			Collection<IPTCDataSet> keywords = getTags(file);
 			insertTags(file, keywords);
 			if (deleteFlag)
-				file.deleteOnExit();
+				file.deleteOnExit(); // if requested mark file after tagging it
 		}
 
 		System.out.println("Finished processing images");
@@ -59,7 +59,7 @@ public class Tagfai {
 			clarifai.recognize(new RecognitionRequest(image));
 
 		// insert all tags returned as keyword, filter away the less likely tags
-		clarifaiTags.get(0).getTags().stream().filter(tag -> tag.getProbability() > 0.9).forEach(tag -> {
+		clarifaiTags.get(0).getTags().stream().filter(tag -> tag.getProbability() > 0.95).forEach(tag -> {
 			IPTCDataSet keyword = new IPTCDataSet(25, tag.getName());
 			keywords.add(keyword);
 		});

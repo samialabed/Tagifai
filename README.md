@@ -42,5 +42,5 @@ Requirements
 
 WIP
 ------------
-Add tags so that dropbox/google photos able to search the files
-Add an easy to use interface
+* Add tags for dropbox/google-photos able to search the files
+* Add an easy to use interface
